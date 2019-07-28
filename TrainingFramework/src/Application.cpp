@@ -20,41 +20,41 @@ void Application::Init()
 {
 	glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
 
-	Shaders *m_Shaders;
-	Texture *m_texture;
-	Models *m_model;
-	Camera *m_Camera;
+	std::unique_ptr <Shaders>  m_Shaders;
+	std::unique_ptr <Texture>  m_texture;
+	std::unique_ptr <Models>   m_model;
+	std::unique_ptr <Camera>   m_Camera;
 
 	//button
-	m_Shaders = new Shaders();
+	m_Shaders = std::make_unique<Shaders>(new Shaders());
 	m_Shaders->Init("..\\Data\\Shaders\\TextureShader.vs", "..\\Data\\Shaders\\TextureShader.fs");
 
-	m_texture = new Texture();
+	m_texture = std::make_unique<Texture>(new Texture());
 	m_texture->Init("..\\Data\\Textures\\arrow.tga", GL_CLAMP_TO_EDGE, GL_LINEAR_MIPMAP_LINEAR);
 
-	m_model = new Models();
+	m_model = std::make_unique<Models>(new Models());
 	m_model->Init("..\\Data\\Model\\Sprite2D.nfg", NFG);
 
-	m_Sprite2D = new Sprite2D(m_model,m_Shaders,m_texture);
+	m_Sprite2D = std::make_unique<Sprite2D>(new Sprite2D(m_model,m_Shaders,m_texture));
 	m_Sprite2D->Set2DPosition(200, 50);
 	m_Sprite2D->SetSize(711*0.1, 720*0.1);
 	m_Sprite2D->Init();
 
-	m_texture = new Texture();
+	m_texture = std::make_unique<Texture>(new Texture());
 	m_texture->Init("..\\Data\\Textures\\home.tga", GL_CLAMP_TO_EDGE, GL_LINEAR_MIPMAP_LINEAR);
 
 
-	m_Sprite2D1 = new Sprite2D(m_model, m_Shaders, m_texture);
+	m_Sprite2D1 = std::make_unique<Sprite2D>(new Sprite2D(m_model, m_Shaders, m_texture));
 	m_Sprite2D1->Set2DPosition(450, 50);
 	m_Sprite2D1->SetSize(711 * 0.1, 720 * 0.1);
 	m_Sprite2D1->Init();
 
 
-	m_texture = new Texture();
+	m_texture = std::make_unique<Texture>(new Texture());
 	m_texture->Init("..\\Data\\Textures\\1.tga", GL_CLAMP_TO_EDGE, GL_LINEAR_MIPMAP_LINEAR);
 
 
-	m_Sprite2D2 = new Sprite2D(m_model, m_Shaders, m_texture);
+	m_Sprite2D2 = std::make_unique<Sprite2D>(new Sprite2D(m_model, m_Shaders, m_texture));
 	m_Sprite2D2->Set2DPosition(330, 50);
 	m_Sprite2D2->SetSize(711 * 0.1, 720 * 0.1);
 	m_Sprite2D2->Init();
@@ -66,55 +66,55 @@ void Application::Init()
 	Vector3 CameraPos(10, 40, 40);
 	Vector3 TargetPos(0, 0, 0);
 	float fFovY = 0.7f;
-	m_Camera = new Camera();
+	m_Camera = std::make_unique<Camera>(new Camera());
 	m_Camera->Init(CameraPos, TargetPos, fFovY, (GLfloat)screenWidth / screenHeight, 1.0f, 5000.0f, 1.0f);
 
 
 	//plan
-	m_model = new Models();
+	m_model = std::make_unique<Models>(new Models());
 	m_model->Init("..\\Data\\Model\\Plan.nfg", NFG);
-	m_Shaders = new Shaders();
+	m_Shaders = std::make_unique<Shaders>(new Shaders());
 	m_Shaders->Init("..\\Data\\Shaders\\ColorShader.vs", "..\\Data\\Shaders\\TextureShader.fs");
-	m_texture = new Texture();
+	m_texture = std::make_unique<Texture>(new Texture());
 	m_texture->Init("..\\Data\\Textures\\Dirt.tga", GL_CLAMP_TO_EDGE, GL_LINEAR_MIPMAP_LINEAR);
 
-	m_Plan = new Sprite3D(m_model, m_Shaders, m_Camera, m_texture);
+	m_Plan = std::make_unique<Sprite3D>(new Sprite3D(m_model, m_Shaders, m_Camera, m_texture));
 	m_Plan->Set3DScale(Vector3(20, 20, 20));
 	m_Plan->Init();
 
 	//box
-	m_model = new Models();
+	m_model = std::make_unique<Models>(new Models());
 	m_model->Init("..\\Data\\Model\\box.nfg", NFG);
-	m_Shaders = new Shaders();
+	m_Shaders = std::make_unique<Shaders>(new Shaders());
 	m_Shaders->Init("..\\Data\\Shaders\\ColorShader.vs", "..\\Data\\Shaders\\ColorShader.fs");
 
-	m_Sprite3D = new Sprite3D(m_model, m_Shaders, m_Camera, Vector4(0.0, 0.0, 1.0, 0.5));
+	m_Sprite3D = std::make_unique<Sprite3D>(new Sprite3D(m_model, m_Shaders, m_Camera, Vector4(0.0, 0.0, 1.0, 0.5)));
 	m_Sprite3D->Set3DScale(Vector3(1, 1, 1));
 	m_Sprite3D->Init();
 
 	//box
-	m_model = new Models();
+	m_model = std::make_unique<Models>(new Models());
 	m_model->Init("..\\Data\\Model\\box.nfg", NFG);
-	m_Shaders = new Shaders();
+	m_Shaders = std::make_unique<Shaders>(new Shaders());
 	m_Shaders->Init("..\\Data\\Shaders\\TextureShader.vs", "..\\Data\\Shaders\\TextureShader.fs");
-	m_texture = new Texture();
+	m_texture = std::make_unique<Texture>(new Texture());
 	m_texture->Init("..\\Data\\Textures\\Grass.tga", GL_CLAMP_TO_EDGE, GL_LINEAR_MIPMAP_LINEAR);
 
-	m_Sprite3D3 = new Sprite3D(m_model, m_Shaders, m_Camera, m_texture);
+	m_Sprite3D3 = std::make_unique<Sprite3D>(new Sprite3D(m_model, m_Shaders, m_Camera, m_texture));
 	m_Sprite3D3->Set3DScale(Vector3(1, 1, 1));
 	m_Sprite3D3->Set3DPosition(Vector3(-10, -10, 10));
 	m_Sprite3D3->Init();
 
 
 	//cirle
-	m_model = new Models();
+	m_model = std::make_unique<Models>(new Models());
 	m_model->Init("..\\Data\\Model\\Bila.nfg", NFG);
-	m_Shaders = new Shaders();
+	m_Shaders = std::make_unique<Shaders>(new Shaders());
 	m_Shaders->Init("..\\Data\\Shaders\\TextureShader.vs", "..\\Data\\Shaders\\TextureShader.fs");
-	m_texture = new Texture();
+	m_texture = std::make_unique<Texture>(new Texture());
 	m_texture->Init("..\\Data\\Textures\\Grass.tga", GL_CLAMP_TO_EDGE, GL_LINEAR_MIPMAP_LINEAR);
 
-	m_Sprite3D1 = new Sprite3D(m_model, m_Shaders, m_Camera, m_texture);
+	m_Sprite3D1 = std::make_unique<Sprite3D>(new Sprite3D(m_model, m_Shaders, m_Camera, m_texture));
 	m_Sprite3D1->Init();
 	m_Sprite3D1->Set3DScale(Vector3(0.05, 0.05, 0.05));
 	/*m_Sprite3D1->SetShaders(m_Shaders);
@@ -124,12 +124,12 @@ void Application::Init()
 
 
 	//Bila
-	m_model = new Models();
+	m_model = std::make_unique<Models>(new Models());
 	m_model->Init("..\\Data\\Model\\bila.nfg", NFG);
-	m_Shaders = new Shaders();
+	m_Shaders = std::make_unique<Shaders>(new Shaders());
 	m_Shaders->Init("..\\Data\\Shaders\\ColorShader.vs", "..\\Data\\Shaders\\ColorShader.fs");
 
-	m_Sprite3D2 = new Sprite3D(m_model, m_Shaders, m_Camera, Vector4(0.0, 0.0, 1.0, 0.5));
+	m_Sprite3D2 = std::make_unique<Sprite3D>(new Sprite3D(m_model, m_Shaders, m_Camera, Vector4(0.0, 0.0, 1.0, 0.5)));
 	m_Sprite3D2->Set3DScale(Vector3(0.1, 0.1, 0.1));
 	m_Sprite3D2->Set3DPosition(Vector3(-10,0,10));
 	m_Sprite3D2->Init();

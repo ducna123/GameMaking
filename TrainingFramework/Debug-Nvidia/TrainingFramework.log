@@ -1,8 +1,189 @@
 ﻿cl : Command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  TrainingFramework.cpp
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2082): error C2027: use of undefined type 'Texture'
+  d:\tailieu\c++\programming\trainingframework\src\gameobject\baseobject.h(7): note: see declaration of 'Texture'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2081): note: while compiling class template member function 'void std::default_delete<_Ty>::operator ()(_Ty *) noexcept const'
+          with
+          [
+              _Ty=Texture
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2296): note: see reference to function template instantiation 'void std::default_delete<_Ty>::operator ()(_Ty *) noexcept const' being compiled
+          with
+          [
+              _Ty=Texture
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2132): note: see reference to class template instantiation 'std::default_delete<_Ty>' being compiled
+          with
+          [
+              _Ty=Texture
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2179): note: see reference to class template instantiation 'std::_Unique_ptr_base<_Ty,_Dx>' being compiled
+          with
+          [
+              _Ty=Texture,
+              _Dx=std::default_delete<Texture>
+          ]
+  d:\tailieu\c++\programming\trainingframework\src\gameobject\baseobject.h(27): note: see reference to class template instantiation 'std::unique_ptr<Texture,std::default_delete<_Ty>>' being compiled
+          with
+          [
+              _Ty=Texture
+          ]
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2082): error C2338: can't delete an incomplete type
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2084): warning C4150: deletion of pointer to incomplete type 'Texture'; no destructor called
+  d:\tailieu\c++\programming\trainingframework\src\gameobject\baseobject.h(7): note: see declaration of 'Texture'
+  Sprite3D.cpp
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): error C2664: 'Camera::Camera(const Camera &)': cannot convert argument 1 from 'std::unique_ptr<Camera,std::default_delete<_Ty>>' to 'const Camera &'
+          with
+          [
+              _Ty=Camera
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: Reason: cannot convert from 'std::unique_ptr<Camera,std::default_delete<_Ty>>' to 'const Camera'
+          with
+          [
+              _Ty=Camera
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  d:\tailieu\c++\programming\trainingframework\src\gameobject\baseobject.h(59): note: see reference to function template instantiation 'std::unique_ptr<Camera,std::default_delete<_Ty>> std::make_unique<Camera,std::unique_ptr<_Ty,std::default_delete<_Ty>>&,0>(std::unique_ptr<_Ty,std::default_delete<_Ty>> &)' being compiled
+          with
+          [
+              _Ty=Camera
+          ]
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): error C2664: 'Models::Models(Models &&)': cannot convert argument 1 from 'std::unique_ptr<Models,std::default_delete<_Ty>>' to 'const Models &'
+          with
+          [
+              _Ty=Models
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: Reason: cannot convert from 'std::unique_ptr<Models,std::default_delete<_Ty>>' to 'const Models'
+          with
+          [
+              _Ty=Models
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  d:\tailieu\c++\programming\trainingframework\src\gameobject\baseobject.h(61): note: see reference to function template instantiation 'std::unique_ptr<Models,std::default_delete<_Ty>> std::make_unique<Models,std::unique_ptr<_Ty,std::default_delete<_Ty>>&,0>(std::unique_ptr<_Ty,std::default_delete<_Ty>> &)' being compiled
+          with
+          [
+              _Ty=Models
+          ]
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): error C2664: 'Shaders::Shaders(const Shaders &)': cannot convert argument 1 from 'std::unique_ptr<Shaders,std::default_delete<_Ty>>' to 'const Shaders &'
+          with
+          [
+              _Ty=Shaders
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: Reason: cannot convert from 'std::unique_ptr<Shaders,std::default_delete<_Ty>>' to 'const Shaders'
+          with
+          [
+              _Ty=Shaders
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  d:\tailieu\c++\programming\trainingframework\src\gameobject\baseobject.h(63): note: see reference to function template instantiation 'std::unique_ptr<Shaders,std::default_delete<_Ty>> std::make_unique<Shaders,std::unique_ptr<_Ty,std::default_delete<_Ty>>&,0>(std::unique_ptr<_Ty,std::default_delete<_Ty>> &)' being compiled
+          with
+          [
+              _Ty=Shaders
+          ]
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): error C2664: 'Texture::Texture(Texture &&)': cannot convert argument 1 from 'std::unique_ptr<Texture,std::default_delete<_Ty>>' to 'const Texture &'
+          with
+          [
+              _Ty=Texture
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: Reason: cannot convert from 'std::unique_ptr<Texture,std::default_delete<_Ty>>' to 'const Texture'
+          with
+          [
+              _Ty=Texture
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  d:\tailieu\c++\programming\trainingframework\src\gameobject\baseobject.h(65): note: see reference to function template instantiation 'std::unique_ptr<Texture,std::default_delete<_Ty>> std::make_unique<Texture,std::unique_ptr<_Ty,std::default_delete<_Ty>>&,0>(std::unique_ptr<_Ty,std::default_delete<_Ty>> &)' being compiled
+          with
+          [
+              _Ty=Texture
+          ]
+  Sprite2D.cpp
+d:\tailieu\c++\programming\trainingframework\src\gameobject\sprite2d.cpp(143): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\tailieu\c++\programming\trainingframework\src\gameobject\sprite2d.cpp(144): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\tailieu\c++\programming\trainingframework\src\gameobject\sprite2d.cpp(154): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\tailieu\c++\programming\trainingframework\src\gameobject\sprite2d.cpp(155): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): error C2664: 'Camera::Camera(const Camera &)': cannot convert argument 1 from 'std::unique_ptr<Camera,std::default_delete<_Ty>>' to 'const Camera &'
+          with
+          [
+              _Ty=Camera
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: Reason: cannot convert from 'std::unique_ptr<Camera,std::default_delete<_Ty>>' to 'const Camera'
+          with
+          [
+              _Ty=Camera
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  d:\tailieu\c++\programming\trainingframework\src\gameobject\baseobject.h(59): note: see reference to function template instantiation 'std::unique_ptr<Camera,std::default_delete<_Ty>> std::make_unique<Camera,std::unique_ptr<_Ty,std::default_delete<_Ty>>&,0>(std::unique_ptr<_Ty,std::default_delete<_Ty>> &)' being compiled
+          with
+          [
+              _Ty=Camera
+          ]
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): error C2664: 'Models::Models(Models &&)': cannot convert argument 1 from 'std::unique_ptr<Models,std::default_delete<_Ty>>' to 'const Models &'
+          with
+          [
+              _Ty=Models
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: Reason: cannot convert from 'std::unique_ptr<Models,std::default_delete<_Ty>>' to 'const Models'
+          with
+          [
+              _Ty=Models
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  d:\tailieu\c++\programming\trainingframework\src\gameobject\baseobject.h(61): note: see reference to function template instantiation 'std::unique_ptr<Models,std::default_delete<_Ty>> std::make_unique<Models,std::unique_ptr<_Ty,std::default_delete<_Ty>>&,0>(std::unique_ptr<_Ty,std::default_delete<_Ty>> &)' being compiled
+          with
+          [
+              _Ty=Models
+          ]
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): error C2664: 'Shaders::Shaders(const Shaders &)': cannot convert argument 1 from 'std::unique_ptr<Shaders,std::default_delete<_Ty>>' to 'const Shaders &'
+          with
+          [
+              _Ty=Shaders
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: Reason: cannot convert from 'std::unique_ptr<Shaders,std::default_delete<_Ty>>' to 'const Shaders'
+          with
+          [
+              _Ty=Shaders
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  d:\tailieu\c++\programming\trainingframework\src\gameobject\baseobject.h(63): note: see reference to function template instantiation 'std::unique_ptr<Shaders,std::default_delete<_Ty>> std::make_unique<Shaders,std::unique_ptr<_Ty,std::default_delete<_Ty>>&,0>(std::unique_ptr<_Ty,std::default_delete<_Ty>> &)' being compiled
+          with
+          [
+              _Ty=Shaders
+          ]
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): error C2664: 'Texture::Texture(Texture &&)': cannot convert argument 1 from 'std::unique_ptr<Texture,std::default_delete<_Ty>>' to 'const Texture &'
+          with
+          [
+              _Ty=Texture
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: Reason: cannot convert from 'std::unique_ptr<Texture,std::default_delete<_Ty>>' to 'const Texture'
+          with
+          [
+              _Ty=Texture
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2539): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  d:\tailieu\c++\programming\trainingframework\src\gameobject\baseobject.h(65): note: see reference to function template instantiation 'std::unique_ptr<Texture,std::default_delete<_Ty>> std::make_unique<Texture,std::unique_ptr<_Ty,std::default_delete<_Ty>>&,0>(std::unique_ptr<_Ty,std::default_delete<_Ty>> &)' being compiled
+          with
+          [
+              _Ty=Texture
+          ]
   Application.cpp
 d:\tailieu\c++\programming\trainingframework\src\application.cpp(40): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
 d:\tailieu\c++\programming\trainingframework\src\application.cpp(49): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
 d:\tailieu\c++\programming\trainingframework\src\application.cpp(59): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
 d:\tailieu\c++\programming\trainingframework\src\application.cpp(119): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 d:\tailieu\c++\programming\trainingframework\src\application.cpp(133): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-  TrainingFramework.vcxproj -> D:\tailieu\c++\Programming\\BIN-Nvidia\TrainingFramework.exe
+d:\tailieu\c++\programming\trainingframework\src\application.cpp(38): error C2280: 'std::unique_ptr<Texture,std::default_delete<_Ty>>::unique_ptr(const std::unique_ptr<_Ty,std::default_delete<_Ty>> &)': attempting to reference a deleted function
+          with
+          [
+              _Ty=Texture
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2337): note: see declaration of 'std::unique_ptr<Texture,std::default_delete<_Ty>>::unique_ptr'
+          with
+          [
+              _Ty=Texture
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(2337): note: 'std::unique_ptr<Texture,std::default_delete<_Ty>>::unique_ptr(const std::unique_ptr<_Ty,std::default_delete<_Ty>> &)': function was explicitly deleted
+          with
+          [
+              _Ty=Texture
+          ]
+  Generating Code...

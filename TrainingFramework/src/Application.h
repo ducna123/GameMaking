@@ -20,14 +20,14 @@ public:
 
 private:
 	
-	Sprite2D *	m_Sprite2D1;
-	Sprite2D *	m_Sprite2D2;
-	Sprite2D *	m_Sprite2D;
-	Sprite3D *	m_Plan;
-	Sprite3D *	m_Sprite3D2;
-	Sprite3D *	m_Sprite3D3;
-	Sprite3D *	m_Sprite3D1;
-	Sprite3D *	m_Sprite3D;
+	std::unique_ptr <Sprite2D> 	m_Sprite2D1;
+	std::unique_ptr <Sprite2D>	m_Sprite2D2;
+	std::unique_ptr <Sprite2D> 	m_Sprite2D;
+	std::unique_ptr <Sprite3D> 	m_Plan;
+	std::unique_ptr <Sprite3D> 	m_Sprite3D2;
+	std::unique_ptr <Sprite3D> 	m_Sprite3D3;
+	std::unique_ptr <Sprite3D> 	m_Sprite3D1;
+	std::unique_ptr <Sprite3D> 	m_Sprite3D;
 
 };
 

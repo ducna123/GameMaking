@@ -21,10 +21,10 @@ protected:
 
 	Matrix			m_WorldMat;
 
-	Models			*m_pModel;
-	Shaders			*m_pShader;
-	Camera			*m_pCamera;
-	Texture			*m_pTexture;
+	std::unique_ptr<Models>			    m_pModel;
+	std::unique_ptr <Shaders>			m_pShader;
+	std::unique_ptr <Camera>		    m_pCamera;
+	std::unique_ptr <Texture>			m_pTexture;
 public:
 	BaseObject() {
 		m_Id = 0;
@@ -56,13 +56,13 @@ public:
 
 	void			SetColor(Vector4 color) { m_Color = color; }
 
-	void			SetCamera(Camera *cam) { m_pCamera = cam; }
+	void			SetCamera(std::unique_ptr <Camera> cam) { m_pCamera = std::make_unique<Camera>(cam); }
 
-	void			SetModels(Models* mod) { m_pModel = mod; }
+	void			SetModels(std::unique_ptr <Models> mod) { m_pModel = std::make_unique<Models>(mod); }
 
-	void			SetShaders(Shaders* sha) { m_pShader = sha; }
+	void			SetShaders(std::unique_ptr <Shaders> sha) { m_pShader = std::make_unique<Shaders>(sha); }
 
-	void			SetTexture(Texture* tex) { m_pTexture = tex; }
+	void			SetTexture(std::unique_ptr <Texture> tex) { m_pTexture = std::make_unique<Texture>(tex); }
 
 };
 
